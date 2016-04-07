@@ -39,9 +39,13 @@ lg(md.mapLines([
 lg(md.h2('How to use'));
 
 lg(md.mapLines([
-    md.strong('First'),
+    md.strong('First of all -'),
+
+    '',
 
     md.bq('Change is the only constant'),
+
+    '',
 
     'This project just got started and are only with the most basic funcs.',
 
@@ -68,7 +72,7 @@ lg(md.js(
         '',
         '// for example',
         'md.code(\'md.h1()\') // --> `md.h1()`',
-        'md.h3(\'md.badFn()\', md.strikethrough, md.code)' +
+        'md.h3(\'md.badFn()\', md.code, md.strikethrough)' +
             ' // --> ### ~~`md.h1()`~~'
     ])
 ));
@@ -76,12 +80,12 @@ lg(md.js(
 lg(md.h4('Available methods'));
 
 lg(md.ul([
-    'md.h1(text)',
-    'md.h2(text)',
-    'md.h3(text)',
-    'md.h4(text)',
-    'md.h5(text)',
-    'md.strikethrough(text) | md.st()',
+    'md.h1()',
+    'md.h2()',
+    'md.h3()',
+    'md.h4()',
+    'md.h5()',
+    'md.strikethrough() | md.st()',
     'md.b() | md.strong()',
     'md.i() | md.em()',
     'md.bq()',
@@ -95,7 +99,7 @@ lg(md.ul([
     'md.ul()',
     'md.li()',
     'md.ol()'
-]));
+].map(md.code)));
 
 lg(md.h2('What\'s the plan?'));
 
