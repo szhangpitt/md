@@ -1,0 +1,26 @@
+{
+  "name": "md",
+  "version": "0.1.0",
+  "description": "markdown generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "$(npm bin)/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szhangpitt/md.git"
+  },
+  "keywords": [
+    "markdown"
+  ],
+  "author": "Shaopeng Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/szhangpitt/md/issues"
+  },
+  "homepage": "https://github.com/szhangpitt/md#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
