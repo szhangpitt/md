@@ -4,7 +4,9 @@
   "description": "markdown generator",
   "main": "index.js",
   "scripts": {
-    "test": "$(npm bin)/mocha test"
+    "test": "$(npm bin)/mocha test",
+    "doc": "node doc > doc/README.md",
+    "start": "node doc"
   },
   "repository": {
     "type": "git",
