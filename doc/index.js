@@ -30,7 +30,8 @@ lg(md.mapLines([
         'It\'ll probably save me some time later.'
     ]),
 
-    'I was writing some module at work. And I wrote function-signature to' +
+    'I was writing some module at work. And I wrote ' +
+    md.code('function-signature') + ' to' +
     ' generate function signatures on my class prototype. So I don\'t have to' +
     ' maintain the document again and again. Whenever my code changes, I get' +
     ' latest function signatures for free. (No jsdoc? Yes I\'m THAT lazy).',
