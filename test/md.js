@@ -17,14 +17,6 @@ describe('md', function  () {
     var html;
     var lines;
 
-    before(function () {
-        console.log('\n```\n');
-    });
-
-    after(function () {
-        console.log('\n```\n');
-    });
-
     beforeEach(function () {
         text = 'markdown generator' ;
         code = 'md.strikethrough()';
