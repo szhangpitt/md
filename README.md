@@ -1,56 +1,90 @@
-
-
-  md
+`md.h1(text)`
 # markdown generator
-    ✓ should h1
+
+
+`md.h2(text)`
 ## markdown generator
-    ✓ should h2
+
+
+`md.h2(text)`
 ## markdown generator
-    ✓ should h3
+
+
+`md.st(text)`
 ~~markdown generator~~
-    ✓ should st
+
+
+`md.b(text)`
 **markdown generator**
-    ✓ should b/strong
+
+
+`md.i(text)`
 *markdown generator*
-    ✓ should i/em
+
+
+`md.bq(text)`
 > markdown generator
-    ✓ should bq
+
+
+`md.li(text)`
 - markdown generator
-    ✓ should li
+
+
+`md.sh(text)`
 $ markdown generator
-    ✓ should sh/shell
+
+
+`md.code(code)`
 `md.strikethrough()`
-    ✓ should code
+
+
+`md.ol(lines)`
 1. line1
 2. line2
-    ✓ should ol
+
+
+`md.ol(lines, md.code)`
 1. `line1`
 2. `line2`
-    ✓ should ol after code
+
+
+`md.ul(lines)`
 - line1
 - line2
-    ✓ should ul
+
+
+`md.ul(lines, md.code)`
 - `line1`
 - `line2`
-    ✓ should ul after code
+
+
+`md.js(code)`
 ```js
 md.strikethrough()
 ```
-    ✓ should js
+
+
+`md.html(html)`
 ```html
 <p class="center">I am some html content</p>
 ```
-    ✓ should js/html/css
+
+
+`md.css(css)`
 ```css
 .center { margin-left: auto; margin-right: auto }
 ```
-    ✓ should js/html/css
+
+
+`md.mapLines(lines, md.code, md.li)`
 - `line1`
 - `line2`
-    ✓ should mapLines
+
+
+`md.h1(code, md.code, md.st)`
 # ~~`md.strikethrough()`~~
-    ✓ should chain fns and then h1
 
 
-  19 passing (16ms)
+
+  19 passing (12ms)
 

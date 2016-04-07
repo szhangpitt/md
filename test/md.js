@@ -3,8 +3,10 @@
 var expect = require('chai').expect;
 var md = require('../lib/md');
 
-var logAndReturn = function (text) {
+var logAndReturn = function (text, calling) {
+    console.log(md.code(calling));
     console.log(text);
+    console.log('\n');
     return text;
 };
 
@@ -25,106 +27,106 @@ describe('md', function  () {
 
     it('should h1', function () {
         expect(
-            logAndReturn(md.h1(text))
+            logAndReturn(md.h1(text), 'md.h1(text)')
         ).to.equal('# markdown generator');
     });
 
     it('should h2', function () {
         expect(
-            logAndReturn(md.h2(text))
+            logAndReturn(md.h2(text), 'md.h2(text)')
         ).to.equal('## markdown generator');
     });
 
     it('should h3', function () {
         expect(
-            logAndReturn(md.h2(text))
+            logAndReturn(md.h2(text), 'md.h2(text)')
         ).to.equal('## markdown generator');
     });
 
     it('should st', function () {
         expect(
-            logAndReturn(md.st(text))
+            logAndReturn(md.st(text), 'md.st(text)')
         ).to.equal('~~markdown generator~~');
     });
 
     it('should b/strong', function () {
         expect(
-            logAndReturn(md.b(text))
+            logAndReturn(md.b(text), 'md.b(text)')
         ).to.equal('**markdown generator**');
     });
 
     it('should i/em', function () {
         expect(
-            logAndReturn(md.i(text))
+            logAndReturn(md.i(text), 'md.i(text)')
         ).to.equal('*markdown generator*');
     });
 
     it('should bq', function () {
         expect(
-            logAndReturn(md.bq(text))
+            logAndReturn(md.bq(text), 'md.bq(text)')
         ).to.equal('> markdown generator');
     });
 
     it('should li', function () {
         expect(
-            logAndReturn(md.li(text))
+            logAndReturn(md.li(text), 'md.li(text)')
         ).to.equal('- markdown generator');
     });
 
     it('should sh/shell', function () {
         expect(
-            logAndReturn(md.sh(text))
+            logAndReturn(md.sh(text), 'md.sh(text)')
         ).to.equal('$ markdown generator');
     });
 
     it('should code', function () {
         expect(
-            logAndReturn(md.code(code))
+            logAndReturn(md.code(code), 'md.code(code)')
         ).to.equal('`md.strikethrough()`');
     });
 
     it('should ol', function () {
         expect(
-            logAndReturn(md.ol(lines))
+            logAndReturn(md.ol(lines), 'md.ol(lines)')
         ).to.equal('1. line1\n2. line2');
     });
 
     it('should ol after code', function () {
         expect(
-            logAndReturn(md.ol(lines, md.code))
+            logAndReturn(md.ol(lines, md.code), 'md.ol(lines, md.code)')
         ).to.equal('1. `line1`\n2. `line2`');
     });
 
     it('should ul', function () {
         expect(
-            logAndReturn(md.ul(lines))
+            logAndReturn(md.ul(lines), 'md.ul(lines)')
         ).to.equal('- line1\n- line2');
     });
 
     it('should ul after code', function () {
         expect(
-            logAndReturn(md.ul(lines, md.code))
+            logAndReturn(md.ul(lines, md.code), 'md.ul(lines, md.code)')
         ).to.equal('- `line1`\n- `line2`');
     });
 
     it('should js', function () {
         expect(
-            logAndReturn(md.js(code))
+            logAndReturn(md.js(code), 'md.js(code)')
         ).to.equal('```js\nmd.strikethrough()\n```');
     });
 
     it('should js/html/css', function () {
         expect(
-            logAndReturn(md.html(html))
+            logAndReturn(md.html(html), 'md.html(html)')
         ).to.equal(
             '```html\n' +
             '<p class="center">I am some html content</p>' +
             '\n```');
     });
 
-    it('should js/html/css', function () {
+    it('should css', function () {
         expect(
-            logAndReturn(md.css(css))
+            logAndReturn(md.css(css), 'md.css(css)')
         ).to.equal(
             '```css\n' +
             '.center { margin-left: auto; margin-right: auto }' +
@@ -134,13 +136,15 @@ describe('md', function  () {
 
     it('should mapLines', function () {
         expect(
-            logAndReturn(md.mapLines(lines, md.code, md.li))
+            logAndReturn(md.mapLines(lines, md.code, md.li),
+                'md.mapLines(lines, md.code, md.li)')
         ).to.equal('- `line1`\n- `line2`');
     });
 
     it('should chain fns and then h1', function () {
         expect(
-            logAndReturn(md.h1(code, md.code, md.st))
+            logAndReturn(md.h1(code, md.code, md.st),
+                'md.h1(code, md.code, md.st)')
         ).to.equal('# ~~`md.strikethrough()`~~');
     });
 
