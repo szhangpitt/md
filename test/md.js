@@ -138,7 +138,7 @@ describe('md', function  () {
         expect(
             logAndReturn(md.mapLines(lines, md.code, md.li),
                 'md.mapLines(lines, md.code, md.li)')
-        ).to.equal('- `line1`\n- `line2`');
+        ).to.equal('- `line1`\n\n- `line2`');
     });
 
     it('should chain fns and then h1', function () {

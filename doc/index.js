@@ -24,15 +24,11 @@ lg(md.mapLines([
 
     'Well like most of the things I built, it\'s just because ',
 
-    '',
-
     md.ol([
         'I ' + md.em('can') + ';',
         'It\'s a lot of fun;',
         'It\'ll probably save me some time later.'
     ]),
-
-    '',
 
     'I was writing some module at work. And I wrote function-signature to' +
     ' generate function signatures on my class prototype. So I don\'t have to' +
@@ -49,17 +45,13 @@ lg(md.h2('How to use'));
 lg(md.mapLines([
     md.strong('First of all -'),
 
-    '',
-
     md.bq('Change is the only constant'),
-
-    '',
 
     'This project just got started and are only with the most basic funcs.',
 
     md.em('So expect a lot of changes coming.', md.b),
 
-    'The easiest way is to look at the test code in ' + md.code('/test'),
+    'The easiest way is to look at the test code in ' + md.code('/test') + '.',
 
     'Run' + md.shell('npm test')
 
@@ -68,7 +60,7 @@ lg(md.mapLines([
 lg(md.h3('API (subject to change)'));
 
 lg(md.js(
-    md.mapLines([
+    [
         'var md = require(\'md\')',
         'var text = \'some text to convert to markdown\'',
         '',
@@ -82,7 +74,7 @@ lg(md.js(
         'md.code(\'md.h1()\') // --> `md.h1()`',
         'md.h3(\'md.badFn()\', md.code, md.strikethrough)' +
             ' // --> ### ~~`md.h1()`~~'
-    ])
+    ].join('\n')
 ));
 
 lg(md.h4('Available methods'));
