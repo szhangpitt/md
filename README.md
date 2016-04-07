@@ -1,3 +1,6 @@
+[2J[1;3H
+```
+
 `md.h1(text)`
 # markdown generator
 
@@ -6,8 +9,8 @@
 ## markdown generator
 
 
-`md.h2(text)`
-## markdown generator
+`md.h3(text)`
+### markdown generator
 
 
 `md.st(text)`
@@ -31,7 +34,7 @@
 
 
 `md.sh(text)`
-$ markdown generator
+`$ markdown generator`
 
 
 `md.code(code)`
@@ -84,6 +87,9 @@ md.strikethrough()
 `md.h1(code, md.code, md.st)`
 # ~~`md.strikethrough()`~~
 
+
+
+```
 
 
   19 passing (12ms)

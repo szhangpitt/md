@@ -17,6 +17,14 @@ describe('md', function  () {
     var html;
     var lines;
 
+    before(function () {
+        console.log('\n```\n');
+    });
+
+    after(function () {
+        console.log('\n```\n');
+    });
+
     beforeEach(function () {
         text = 'markdown generator' ;
         code = 'md.strikethrough()';
@@ -39,8 +47,8 @@ describe('md', function  () {
 
     it('should h3', function () {
         expect(
-            logAndReturn(md.h2(text), 'md.h2(text)')
-        ).to.equal('## markdown generator');
+            logAndReturn(md.h3(text), 'md.h3(text)')
+        ).to.equal('### markdown generator');
     });
 
     it('should st', function () {
@@ -76,7 +84,7 @@ describe('md', function  () {
     it('should sh/shell', function () {
         expect(
             logAndReturn(md.sh(text), 'md.sh(text)')
-        ).to.equal('$ markdown generator');
+        ).to.equal('`$ markdown generator`');
     });
 
     it('should code', function () {
